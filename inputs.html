@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title> 
+</head>
+<body>
+    <form class="" action="index.html" method="post">
+        <label for="text">text:</label>
+        <input type="text">
+        <br>
+        <br>
+        <label for="email">email:</label>
+        <!-- multiple allows entry of multiple email addresses separated by commas -->
+        <input type="email" multiple id="email" name="email">
+        <br>
+        <br>
+        <label for="search">search: </label>
+        <input type="search" id="search" name="search">
+        <br>
+        <br>
+        <label for="tel">telephone:</label>
+        <input type="search" id="search" name="search">
+        <br>
+        <br>
+        <label for="url" >url: </label>
+        <input type="url" id="url" name="url">
+        <br>
+        <br>
+        <!-- this guy has a number range and increments of 2 -->
+        <label for="number">number: </label>
+        <input type="number" name="age" id="age" min="1" max="10" step="2">
+        <br>
+        <br>
+        <label for="number1">diff number</label>
+        <input type="number" name="change" id="pennies" min="0" max="1" step="0.01">
+        <br>
+        <br>
+        <label for="price">Choose a maximum house price: </label>
+        <input type="range" name="price" id="price" min="50000" max="500000" step="100" value="250000">
+        <output class="price-output" for="price"></output>
+        <!-- this javascript allows us to see the value of the slider -->
+        <script>
+        const price = document.querySelector('#price');
+        const output = document.querySelector('.price-output');
+        
+        output.textContent = price.value;
+        
+        price.addEventListener('input', function() {
+        output.textContent = price.value;
+        });
+        </script>
+        <br>
+        <br>
+
+        <!-- The dates can be restricted or not -->
+        <label for="myDate">When are you available this summer?</label>
+        <input type="date" name="myDate" min="2013-06-01" max="2013-08-31" step="7" id="myDate">
+        <br>
+        <br>
+        <label for="myDate1">No restrictions</label>
+        <input type="date" name="myDate1" id="myDate1">
+        <br>
+        <br>
+        <label for="datetime">Date and Time - Local</label>
+        <input type="datetime-local" name="datetime" id="datetime">
+        <br>
+        <br>
+        <label for="month">month:</label>
+        <input type="month" name="month" id="month" min="2018-01" max="2023-10">
+        <br>
+        <br>
+        <label for="week">week: </label>
+        <!-- Note the min and max values here are week numbers - not dates -->
+        <input type="week" name="week" id="week" min="2018-W01" max="2023-W40">
+        <br>
+        <br>
+        <label for="time">time: </label>
+        <!-- min and max doesn't seem to work - some say it depends on browser
+             everyone pretty much says do it in JS -->
+        <input type="time" name="time" id="time">
+        <br>
+        <br>
+        <label for="color">color picker</label>
+        <input type="color" name="color" id="color">
+        <br>
+        <br>
+        <label for="button">button: </label>
+        <input class="favorite styled" type="button" value="Add to favorites">
+        <br>
+        <br>
+        <label for="checkbox">checkbox: </label>
+        <p>Choose your monster's features:</p>
+        <div>
+            <input type="checkbox" id="scales" name="scales" checked>
+            <label for="scales">Scales</label>
+        </div>
+        <div>
+            <input type="checkbox" id="horns" name="horns">
+            <label for="horns">Horns</label>
+        </div>
+        <br>
+        <br>
+        <label for="another-color">A little more fun with color: </label>
+        <p>Choose your monster's colors:</p>
+        <div>
+            <input type="color" id="head" name="head" value="#e66465">
+            <label for="head">Head</label>
+        </div>
+        <div>
+            <input type="color" id="body" name="body" value="#f6b73c">
+            <label for="body">Body</label>
+        </div>
+        <br>
+        <br>
+        <label for="avatar">Choose a profile picture:</label>
+        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+        <br>
+        <br>
+        <!-- This info will not be shown on the page but can be submittted to the server -->
+        <label for="postId">hidden:</label>
+        <input type="hidden" id="postId" name="postId" value="34657">
+        <br>
+        <br>
+        <label for="image">image:</label>
+        <input type="image" id="image" alt="Login" src="/images/andy2.png">
+        <br>
+        <br>
+        <label for="radio">radio: </label>
+        <p>Select a maintenance drone:</p>
+        <div>
+            <input type="radio" id="huey" name="drone" value="huey" checked>
+            <label for="huey">Huey</label>
+        </div>
+        <div>
+            <input type="radio" id="dewey" name="drone" value="dewey">
+            <label for="dewey">Dewey</label>
+        </div>
+        <div>
+            <input type="radio" id="louie" name="drone" value="louie">
+            <label for="louie">Louie</label>
+        </div>
+        <br>
+        <br>
+        <p>Audio settings:</p>
+        <div>
+            <input type="range" id="volume" name="volume" min="0" max="11">
+            <label for="volume">Volume</label>
+        </div>
+        <div>
+            <input type="range" id="cowbell" name="cowbell" min="0" max="100" value="90" step="10">
+            <label for="cowbell">Cowbell</label>
+        </div>
+        <br>
+        <br>
+        <!-- reset button -->
+        <div class="controls">
+            <label for="id">User ID:</label>
+            <input type="text" id="id" name="id" />
+            <input type="reset" value="Reset">
+            <input type="submit" value="Submit">
+        </div>
+        <br>
+        <br>
+
+
+
+
+
+
+
+    </form>
+</body>
+</html>
